@@ -22,8 +22,7 @@
 
 ### Langkah 1:  ⁠Pengujian Docker Compose, Volume, Network, Container
 
-Jelaskan secara singkat apa yang dilakukan pada langkah pertama ini. Jika ada kode atau perintah terminal, tulis seperti contoh di bawah:
-
+Pada langkah pertama dilakukan pengujian penggunaan Docker Compose untuk menjalankan aplikasi beserta konfigurasi volume, network, dan container. Pengujian ini bertujuan memastikan seluruh service dapat berjalan dengan baik dan saling terhubung.
 ```bash
 # Contoh perintah terminal yang dijalankan
 docker build -t app-good .
@@ -36,8 +35,7 @@ docker build -t app-good .
 
 ### Langkah 2: Pengujian Endpoint -> Request dan Response (Browser, Postman)
 
-Jelaskan proses penamaan ulang _image_ dan proses unggah ke Docker Hub milik Anda.
-
+Pada langkah kedua dilakukan pengujian endpoint aplikasi menggunakan browser maupun Postman. Pengujian ini bertujuan memastikan request dan response dari aplikasi berjalan dengan baik sesuai endpoint yang tersedia.
 ```bash
 docker tag app-good madedianpp/app-good:v1.0
 docker push madedianpp/app-good:v1.0
@@ -50,8 +48,7 @@ docker push madedianpp/app-good:v1.0
 
 ### Langkah 3: Pengujian upload ke Docker Hub
 
-Jelaskan bagaimana cara melakukan verifikasi atau pengujian bahwa praktikum Anda berhasil berjalan.
-
+Pada langkah ketiga dilakukan proses penamaan ulang (tagging) image Docker dan upload image ke Docker Hub agar image dapat disimpan secara online dan digunakan kembali di perangkat lain.
 ```bash
 docker run -d -p 8080:8080 madedianpp/app-good:v1.0
 ```
@@ -63,4 +60,6 @@ docker run -d -p 8080:8080 madedianpp/app-good:v1.0
 
 ## Kesimpulan
 
-Tuliskan kesimpulan singkat atau kendala yang Anda hadapi beserta solusinya selama melakukan praktikum ini di sini.
+Berdasarkan praktikum yang telah dilakukan, Docker dapat digunakan untuk mempermudah proses pengelolaan aplikasi melalui container, network, volume, dan Docker Compose. Selain itu, Docker Hub memudahkan proses distribusi image aplikasi agar dapat dijalankan di berbagai perangkat.
+
+Kendala yang sempat dihadapi adalah proses koneksi antar container dan proses upload image yang terkadang gagal akibat koneksi internet atau kesalahan penamaan image. Solusinya adalah memastikan konfigurasi Docker Compose sudah benar serta melakukan pengecekan login Docker Hub sebelum melakukan push image.
